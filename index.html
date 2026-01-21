@@ -24,7 +24,7 @@
     	<div class="jumbotron">
 			<h1>Minecraft Server Status</h1>
 
-			<p>{{ server.name }} - {{ server.ip }}:{{ server.port }}</p>
+			<p>{{ server.name }} - {{ server.host }}:{{ server.port }}</p>
 
 		</div>
 
@@ -86,13 +86,21 @@
 
 	</div>
 <script type="text/javascript">
-	var config = {
-		"name": "Sample",
-		"host": "localhost",
-		"port": 25565,
-		"protocol": "java",
-		"timeout": 5
+	var servers = {
+		"Java": {
+			"name": "Java",
+			"host": "localhost",
+			"port": 25565,
+			"protocol": "java"
+		},
+		"Bedrock": {
+			"name": "Bedrock",
+			"host": "localhost",
+			"port": 25560,
+			"protocol": "bedrock"
+		}
 	};
+	var timeout = 5;
 	var avatarURL = "";
 </script>
 <script type="text/javascript" src="mc-query.js"></script>
