@@ -29,7 +29,7 @@
 		</div>
 
 
-		<div class="panel panel-primary" id="exception">
+		<div class="panel panel-primary">
 			<div class="panel-heading">{{ exception.message }}</div>
 			<div class="panel-body">{{ exception.trace }}</div>
 		</div>
@@ -40,7 +40,7 @@
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th colspan="2">Server Info <em>(queried in {{ timer }}s)</em></th>
+							<th colspan="2">Server Info <em>({{ status }})</em></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -63,7 +63,7 @@
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Players</th>
+							<th>Players <em>({{ players.size }})</em></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -85,5 +85,14 @@
 		</div>
 
 	</div>
+<script type="text/JavaScript">
+	serverName = "Sample";
+	serverIP = "localhost";
+	serverPort = 25565;
+	serverProtocol = "java";
+	queryTimeout = 5;
+
+	avatarURL = "";
+</script>
 </body>
 </html>
