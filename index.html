@@ -24,12 +24,12 @@
     	<div class="jumbotron">
 			<h1>Minecraft Server Status</h1>
 
-			<p>{{ server.name }} - {{ server.host }}:{{ server.port }}</p>
+			<p id="server-name">{{ server.name }} - {{ server.host }}:{{ server.port }}</p>
 
 		</div>
 
 
-		<div class="panel panel-primary">
+		<div class="panel panel-primary" id="exception">
 			<div class="panel-heading">{{ exception.message }}</div>
 			<div class="panel-body">{{ exception.trace }}</div>
 		</div>
@@ -40,12 +40,12 @@
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th colspan="2">Server Info <em>({{ status }})</em></th>
+							<th colspan="2">Server Info (<span id="status">{{ status }}</span>)</th>
 						</tr>
 					</thead>
 					<tbody>
 
-						<tr>
+						<tr id="info-item">
 							<td>{{ info.key }}</td>
 							<td>{{ info.value }}</td>
 						</tr>
@@ -63,19 +63,19 @@
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
-							<th>Players <em>({{ players.size }})</em></th>
+							<th>Players (<span id="player-size">{{ players.size }}</span>)</th>
 						</tr>
 					</thead>
 					<tbody>
 
-						<tr>
+						<tr id="player-item">
 							<td>
 								<img src="{{ avatarURL }}/{{ player.id }}" alt="{{ player.name }}">
 								<span>{{ player.name }}</span>
 							</td>
 						</tr>
 
-						<tr id="players-none">
+						<tr id="player-none">
 							<td>No Players Online</td>
 						</tr>
 
